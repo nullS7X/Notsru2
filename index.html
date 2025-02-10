@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Website</title>
+    <link rel="stylesheet" href="styles.min.css"> <!-- Minified or combined styles -->
     <style>
         /* Make the iframe take up the whole viewport */
         html, body, iframe {
@@ -12,13 +13,25 @@
             padding: 0;
             border: none;
         }
+
         iframe {
-            width: 100%;
-            height: 100%;
+            width: 800px;  /* Adjust size to fit content */
+            height: 600px;
+        }
+
+        /* Disable animations for reduced motion users */
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="https://sprunkiretake.app" title="Embedded Website"></iframe>
+    <!-- Embed the iframe with lazy loading and size adjustments -->
+    <iframe src="https://sprunkiretake.app" title="Embedded Website" loading="lazy"></iframe>
+
+    <!-- External JS script -->
+    <script src="scripts.min.js" async></script>  <!-- Minified or combined scripts -->
 </body>
 </html>
